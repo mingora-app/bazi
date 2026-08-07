@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 32 32">
+  <title>Mingora</title>
+  <defs>
+    <linearGradient id="border" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D9E3DF"/>
+      <stop offset="100%" stop-color="#BCC8C3"/>
+    </linearGradient>
+  </defs>
+  <circle cx="16" cy="16" r="15.5" fill="#EAF1EF" stroke="url(#border)" stroke-width="1"/>
+  <path d="M16 16 21.098 8.719A8.889 8.889 0 0 1 24.5 18.599Z" fill="#5F9C7A"/>
+  <path d="M16 16 24.5 18.599a8.889 8.889 0 0 1-8.345 6.289Z" fill="#D96C5F"/>
+  <path d="M16 16 16.155 24.888a8.889 8.889 0 0 1-8.56-5.994Z" fill="#B79A63"/>
+  <path d="M16 16 7.595 18.894a8.889 8.889 0 0 1 3.056-9.993Z" fill="#6E8EA0"/>
+  <path d="M16 16 10.651 8.901a8.889 8.889 0 0 1 10.447-.182Z" fill="#3B82A0"/>
+</svg>

@@ -1,0 +1,23 @@
+name: Feature request
+description: Propose a focused addition to the calculation library.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: Describe the application need rather than only the proposed API.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References and edge cases
+      description: Include independent sources and boundary cases where relevant.

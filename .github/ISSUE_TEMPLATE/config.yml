@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Mingora product support
+    url: https://mingora.app/
+    about: Get help with the Mingora website and user-facing readings.
+  - name: Security report
+    url: https://github.com/mingora-app/bazi/security/advisories/new
+    about: Report vulnerabilities privately instead of opening a public issue.
