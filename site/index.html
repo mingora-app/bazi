@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mingora BaZi — Open-source TypeScript calculation engine</title>
+    <meta name="description" content="A typed, inspectable BaZi calculation engine for Four Pillars, true solar time, Five Elements, Da Yun, and relationship signals." />
+    <meta name="theme-color" content="#0b0d0f" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://mingora-app.github.io/bazi/" />
+    <link rel="icon" href="./mingora-mark.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mingora BaZi" />
+    <meta property="og:title" content="BaZi calculation, made inspectable." />
+    <meta property="og:description" content="Open-source TypeScript primitives for Four Pillars, true solar time, Five Elements, and Da Yun." />
+    <meta property="og:url" content="https://mingora-app.github.io/bazi/" />
+    <meta property="og:image" content="https://mingora-app.github.io/bazi/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="BaZi calculation, made inspectable." />
+    <meta name="twitter:description" content="Open-source TypeScript primitives for Four Pillars, true solar time, Five Elements, and Da Yun." />
+    <meta name="twitter:image" content="https://mingora-app.github.io/bazi/og.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "@mingora/bazi",
+        "description": "A production-oriented TypeScript BaZi calculation and analysis toolkit.",
+        "codeRepository": "https://github.com/mingora-app/bazi",
+        "programmingLanguage": "TypeScript",
+        "runtimePlatform": "Node.js",
+        "license": "https://opensource.org/license/mit",
+        "url": "https://mingora-app.github.io/bazi/",
+        "author": { "@type": "Organization", "name": "Mingora", "url": "https://mingora.app/" }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav shell" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Mingora BaZi documentation home">
+          <img src="./mingora-mark.svg" alt="" width="30" height="30" />
+          <span><strong>Mingora</strong><em>/ bazi</em></span>
+        </a>
+        <div class="nav-links">
+          <a href="#method">Method</a>
+          <a href="#api">API</a>
+          <a href="#accuracy">Accuracy</a>
+          <a href="https://github.com/mingora-app/bazi">GitHub</a>
+        </div>
+        <a class="nav-cta" href="https://mingora.app/bazi-calculator">Try the calculator <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero shell" id="top">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Open-source · TypeScript · MIT</p>
+          <h1>BaZi calculation,<br /><i>made inspectable.</i></h1>
+          <p class="hero-lede">Reliable primitives for Four Pillars, true solar time, Five Element profiles, and Da Yun—built for applications that need explicit rules instead of a black box.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#quickstart">Read the quickstart <span aria-hidden="true">↓</span></a>
+            <a class="button button-quiet" href="https://github.com/mingora-app/bazi">View source on GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="install-line" aria-label="Install command">
+            <span class="prompt">$</span>
+            <code>pnpm add @mingora/bazi</code>
+            <button class="copy-button" type="button" data-copy="pnpm add @mingora/bazi" aria-label="Copy install command">Copy</button>
+          </div>
+        </div>
+
+        <div class="hero-console reveal reveal-delay" aria-label="Example calculation output">
+          <div class="console-bar">
+            <div class="console-dots"><span></span><span></span><span></span></div>
+            <span>chart.ts</span>
+            <span class="console-status">● verified</span>
+          </div>
+          <pre><code><span class="syntax-muted">import</span> { <span class="syntax-fn">calculateBaziChart</span> }
+  <span class="syntax-muted">from</span> <span class="syntax-string">"@mingora/bazi"</span>;
+
+<span class="syntax-muted">const</span> chart = <span class="syntax-fn">calculateBaziChart</span>({
+  date: { year: <span class="syntax-num">1998</span>, month: <span class="syntax-num">12</span>, day: <span class="syntax-num">13</span> },
+  time: { hour: <span class="syntax-num">12</span>, minute: <span class="syntax-num">0</span> },
+  location: {
+    timeZone: <span class="syntax-string">"Asia/Shanghai"</span>,
+    longitude: <span class="syntax-num">116.39</span>
+  },
+  options: { solarTime: <span class="syntax-string">"true"</span> }
+});</code></pre>
+          <div class="console-result">
+            <div><span>Year</span><strong>戊寅</strong><small>Wu Yin</small></div>
+            <div><span>Month</span><strong>甲子</strong><small>Jia Zi</small></div>
+            <div class="active"><span>Day</span><strong>甲午</strong><small>Jia Wu</small></div>
+            <div><span>Hour</span><strong>庚午</strong><small>Geng Wu</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof-strip" aria-label="Project quality metrics">
+        <div class="shell proof-grid">
+          <div><strong>500</strong><span>randomized chart checks</span></div>
+          <div><strong>97.9%</strong><span>statement coverage</span></div>
+          <div><strong>100%</strong><span>function coverage</span></div>
+          <div><strong>1800–2100</strong><span>documented date range</span></div>
+        </div>
+      </section>
+
+      <section class="section shell" id="method">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> What it computes</p>
+          <h2>A small surface.<br />A complete calculation path.</h2>
+          <p>The library separates calendar facts, time correction, and interpretive policy so every output can be traced back to an explicit stage.</p>
+        </div>
+        <div class="capability-grid">
+          <article class="capability-card reveal">
+            <span class="card-index">01</span><div class="element-orbit orbit-wood" aria-hidden="true"><b>木</b></div>
+            <h3>Four Pillars</h3><p>Year, month, day, and hour pillars with typed stems, branches, hidden stems, polarity, and Ten God relationships.</p><code>calculateFourPillars()</code>
+          </article>
+          <article class="capability-card reveal">
+            <span class="card-index">02</span><div class="element-orbit orbit-water" aria-hidden="true"><b>時</b></div>
+            <h3>True solar time</h3><p>IANA history, DST transitions, standard meridians, equation of time, and safe date rollover in one transparent result.</p><code>calculateTrueSolarTime()</code>
+          </article>
+          <article class="capability-card reveal">
+            <span class="card-index">03</span><div class="element-orbit orbit-fire" aria-hidden="true"><b>運</b></div>
+            <h3>Da Yun timing</h3><p>Direction, precise Sect 2 starting offset, start date, and typed ten-year cycles without calculating it for every chart.</p><code>calculateDaYun()</code>
+          </article>
+          <article class="capability-card reveal">
+            <span class="card-index">04</span><div class="element-orbit orbit-earth" aria-hidden="true"><b>衡</b></div>
+            <h3>Five Elements</h3><p>Versioned hidden-stem weights, seasonal adjustment, normalized percentages, Day Master support, and role mapping.</p><code>analyzeElements()</code>
+          </article>
+        </div>
+      </section>
+
+      <section class="section process-section" id="quickstart">
+        <div class="shell">
+          <div class="section-heading compact reveal"><p class="eyebrow"><span></span> Transparent by design</p><h2>One input. Five explicit stages.</h2></div>
+          <ol class="process-list">
+            <li class="reveal"><span>01</span><div><strong>Validate</strong><p>Gregorian date, exact or unknown time, IANA zone, coordinates, and policy options.</p></div></li>
+            <li class="reveal"><span>02</span><div><strong>Resolve civil time</strong><p>Historical offsets and DST ambiguity are resolved before astronomical correction.</p></div></li>
+            <li class="reveal"><span>03</span><div><strong>Correct solar time</strong><p>Longitude and equation-of-time corrections can move the calculation across a day boundary.</p></div></li>
+            <li class="reveal"><span>04</span><div><strong>Generate pillars</strong><p>The calendar engine applies the selected midnight or Zi-hour day boundary.</p></div></li>
+            <li class="reveal"><span>05</span><div><strong>Analyze</strong><p>Versioned Mingora models produce auditable element scores and relationship signals.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section shell boundary-section" id="accuracy">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span></span> Boundary-aware</p><h2>The edge cases are<br />part of the API.</h2>
+          <p>Birth-time software fails at boundaries, not at noon. These cases are modeled, returned, and tested instead of hidden behind defaults.</p>
+        </div>
+        <div class="boundary-lab reveal">
+          <div class="boundary-tabs" role="tablist" aria-label="Boundary examples">
+            <button role="tab" aria-selected="true" data-case="dst">DST overlap</button>
+            <button role="tab" aria-selected="false" data-case="rollover">Date rollover</button>
+            <button role="tab" aria-selected="false" data-case="unknown">Unknown time</button>
+            <button role="tab" aria-selected="false" data-case="lichun">Li Chun</button>
+          </div>
+          <div class="boundary-panel" aria-live="polite">
+            <div><p class="boundary-kicker" id="case-kicker">America/New_York · 2023-11-05 · 01:30</p><h3 id="case-title">One clock time. Two real instants.</h3><p id="case-body">Fall-back creates two valid 01:30 timestamps. Choose <code>earlier</code>, <code>later</code>, <code>compatible</code>, or reject ambiguity explicitly.</p></div>
+            <div class="boundary-output" id="case-output"><span>earlier</span><strong>UTC−04:00</strong><span>later</span><strong>UTC−05:00</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section api-section" id="api">
+        <div class="shell api-layout">
+          <div class="section-heading compact reveal">
+            <p class="eyebrow"><span></span> Public API</p><h2>Focused primitives.<br />Serializable output.</h2>
+            <p>No calendar-library objects leak through the public contract. Upgrade the internals without rewriting your application.</p>
+            <a class="text-link" href="https://github.com/mingora-app/bazi#public-api">Read the complete API on GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="api-list reveal">
+            <details open><summary><code>calculateBaziChart(input)</code><span>Primary entry</span></summary><p>Returns pillars, Day Master, element profile, role mapping, confidence, warnings, and calculation metadata.</p></details>
+            <details><summary><code>calculateTrueSolarTime(input)</code><span>Time</span></summary><p>Returns civil and solar timestamps, offsets, standard meridian, each correction component, and rollover status.</p></details>
+            <details><summary><code>calculateDaYun(input)</code><span>Timing</span></summary><p>Returns direction, direction basis, precise start offset, start datetime, and up to twelve typed cycles.</p></details>
+            <details><summary><code>analyzeRelationship(a, b)</code><span>Signals</span></summary><p>Returns deterministic Day Master, polarity, element exchange, role rhythm, and branch-interaction evidence.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell principles-section">
+        <div class="section-heading compact reveal"><p class="eyebrow"><span></span> Engineering principles</p><h2>Useful defaults.<br />No invisible assumptions.</h2></div>
+        <div class="principle-grid">
+          <article class="reveal"><span class="principle-mark">↯</span><h3>Uncertainty is output</h3><p>An unknown birth time produces a null hour pillar and explicit warnings—not a fabricated noon chart presented as fact.</p></article>
+          <article class="reveal"><span class="principle-mark">◎</span><h3>Policy is versioned</h3><p>Seasonal weights and hidden-stem proportions belong to named models, separate from calendar calculations.</p></article>
+          <article class="reveal"><span class="principle-mark">⌁</span><h3>Boundaries are selectable</h3><p>Midnight and Zi-hour day boundaries are first-class options, preserved in calculation metadata.</p></article>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="shell cta-inner reveal">
+          <div><p class="eyebrow light"><span></span> From engine to experience</p><h2>See the calculation<br />in a human interface.</h2><p>This library powers the production BaZi experience at Mingora—turning structured calculation into clear, plain-English reflection.</p></div>
+          <div class="cta-actions">
+            <a class="button button-light" href="https://mingora.app/bazi-calculator">Try Mingora’s BaZi calculator <span aria-hidden="true">↗</span></a>
+            <a class="cta-secondary" href="https://mingora.app/learn/true-solar-time-bazi">Learn about true solar time <span aria-hidden="true">↗</span></a>
+            <a class="cta-secondary" href="https://mingora.app/bazi-da-yun-starting-age-calculation">Explore Da Yun timing <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="https://mingora.app/"><img src="./mingora-mark.svg" alt="" width="28" height="28" /><span><strong>Mingora</strong><em>/ bazi</em></span></a>
+        <p>Open-source calculation infrastructure for modern BaZi applications.</p>
+        <div><a href="https://github.com/mingora-app/bazi">GitHub</a><a href="https://github.com/mingora-app/bazi/blob/main/LICENSE">MIT License</a><a href="https://mingora.app/">Mingora</a></div>
+      </div>
+    </footer>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

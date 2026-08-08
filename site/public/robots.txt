@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mingora-app.github.io/bazi/sitemap.xml

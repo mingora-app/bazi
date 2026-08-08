@@ -22,6 +22,8 @@
 
 你可以在 [Mingora 八字计算器](https://mingora.app/bazi-calculator) 中体验面向普通用户的产品形态。
 
+你也可以通过 [Mingora BaZi 技术文档站](https://mingora-app.github.io/bazi/) 查看计算流程、边界处理和公共 API。
+
 > 八字属于传统解释体系。本库提供确定性的历法和规则计算，不构成科学预测或任何专业建议。
 
 ## 为什么开发这个库
@@ -219,6 +221,7 @@ pnpm build
 
 ## 项目链接
 
+- [技术文档](https://mingora-app.github.io/bazi/)
 - [Mingora](https://mingora.app/)
 - [在线八字计算器](https://mingora.app/bazi-calculator)
 - [问题反馈](https://github.com/mingora-app/bazi/issues)

@@ -22,6 +22,8 @@
 
 Try the user-facing experience with the [Mingora BaZi Calculator](https://mingora.app/bazi-calculator).
 
+Explore the calculation method, boundary behavior, and public API on the [Mingora BaZi documentation site](https://mingora-app.github.io/bazi/).
+
 > BaZi is a traditional interpretive system. This library provides deterministic calendar and rule calculations, not scientific predictions or professional advice.
 
 ## Why this library
@@ -217,6 +219,7 @@ No software can guarantee the correctness of historical birth records or interpr
 
 ## Project links
 
+- [Documentation](https://mingora-app.github.io/bazi/)
 - [Mingora](https://mingora.app/)
 - [Live BaZi Calculator](https://mingora.app/bazi-calculator)
 - [Issue tracker](https://github.com/mingora-app/bazi/issues)
